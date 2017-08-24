@@ -1,8 +1,20 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-    
+    padding-top: 20px;
+    padding-bottom: 20px;    
 }
 
+.jumbotron {
+    padding-top: 10px;
+    padding-bottom: 80px;
+    margin: 0px auto;
+    background-color: transparent;
+}
+
+.card-block {
+    padding-top: 0.25rem;
+    padding-right: 1.25rem;
+    padding-bottom: 0.05rem;
+    padding-left: 1.25rem;
+}
 
 
