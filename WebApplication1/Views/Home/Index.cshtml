@@ -1,10 +1,11 @@
-﻿@{
+﻿@using DayPilot.Web.Mvc.Events.Month
+
+@{
     ViewBag.Title = "Home Page";
 }
-
-
-
 <script src="@Url.Content("~/Scripts/daypilot-all.min.js")" type="text/javascript"></script>
+
+
 
 <div class="jumbotron">    
     <div class="row row-header align-items-center ">
@@ -29,14 +30,32 @@
     </div>    
 </div>
 
+<div class="row ">
+    <div class="col-12 buttonsnext">
+
+        <a href="javascript:dp.commandCallBack('previous');" class="btn btn-primary btn-sm" role="button">Previous</a>
+        <a href="javascript:dp.commandCallBack('today');" class="btn btn-primary btn-sm" role="button">Today</a>
+        <a href="javascript:dp.commandCallBack('next');" class="btn btn-primary btn-sm" role="button">Next</a>
+    </div>
+</div>
 
 
+<div class="row">
+    <div class="col-12 ">
 
-@Html.DayPilotMonth("dpm", new DayPilotMonthConfig
+@Html.DayPilotMonth("dp", new DayPilotMonthConfig
 {
-    BackendUrl = Url.Content("~/Home/Backend"),
-    EventMoveHandling = DayPilot.Web.Mvc.Events.Month.EventMoveHandlingType.CallBack,
-    EventResizeHandling = DayPilot.Web.Mvc.Events.Month.EventResizeHandlingType.CallBack,
-    TimeRangeSelectedHandling = DayPilot.Web.Mvc.Events.Month.TimeRangeSelectedHandlingType.JavaScript,
-    TimeRangeSelectedJavaScript = "dpm.timeRangeSelectedCallBack(start, end, { name: prompt('New Event Name:', 'New Event') });"
+    BackendUrl = Url.Content("~/Home/Backend"),    
+
 })
+</div>
+</div>
+
+
+
+
+
+
+
+
+
